@@ -185,7 +185,7 @@ class SimpleText extends Application
 		// set events
 		inputPage.onPointerDown = function(t:UITextPage<MyFontStyle>, e:PointerEvent) {
 			//t.setInputFocus(e, true);			
-			t.setInputFocus(e);			
+			t.setInputFocus(e);
 			t.startSelection(e);
 		}
 		inputPage.onPointerUp = function(t:UITextPage<MyFontStyle>, e:PointerEvent) {
