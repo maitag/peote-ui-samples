@@ -5,6 +5,7 @@ import lime.ui.Window;
 
 import peote.view.PeoteView;
 import peote.view.Color;
+import peote.view.Load;
 
 import peote.text.Font;
 
@@ -15,8 +16,6 @@ import peote.ui.config.*;
 import peote.ui.event.*;
 
 import peote.ui.style.interfaces.FontStyle;
-
-import utils.Loader;
 
 // ------------------------------------------
 // --- using a custom FontStyle here --------
@@ -98,9 +97,8 @@ class LargeText extends Application
 			// "https://ia800308.us.archive.org/10/items/SartreLaNause1974/Sartre%20-%20La%20naus%C3%A9e%20-%201974_djvu.txt", "assets/testdata/satre-la-nausee.txt"
 		);
 		
-		Loader.text( assetPath,
+		Load.text( assetPath,
 			function(loaded:Int, size:Int) trace('loading progress ' + Std.int(loaded / size * 100) + "%" , ' ($loaded / $size)'),
-			function(errorMsg:String) trace('error $errorMsg'),
 			function(text:String) // on load
 			{
 				// ------ text area ------
@@ -200,7 +198,10 @@ class LargeText extends Application
 				}
 */				
 				
-			}
+			},
+
+			function(errorMsg:String) trace('error $errorMsg')
+			
 		);				
 		
 		
